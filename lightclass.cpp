@@ -21,29 +21,28 @@ LightClass::~LightClass()
 
 void LightClass::SetAmbientColor(float red, float green, float blue, float alpha)
 {
-	m_ambientColor = D3DXVECTOR4(red, green, blue, alpha);
+	m_ambientColor = DirectX::XMLoadFloat4(&DirectX::XMFLOAT4(red, green, blue, alpha));
 	return;
 }
 
 
 void LightClass::SetDiffuseColor(float red, float green, float blue, float alpha)
 {
-	m_diffuseColor = D3DXVECTOR4(red, green, blue, alpha);
+	m_diffuseColor = DirectX::XMLoadFloat4(&DirectX::XMFLOAT4(red, green, blue, alpha));
 	return;
 }
 
 
 void LightClass::SetDirection(float x, float y, float z)
 {
-	m_direction = D3DXVECTOR3(x, y, z);
+	m_direction = DirectX::XMLoadFloat3(&DirectX::XMFLOAT3(x, y, z));
 	return;
 }
 
 
 void LightClass::SetSpecularColor(float red, float green, float blue, float alpha)
 {
-	m_specularColor = D3DXVECTOR4(red, green, blue, alpha);
-	return;
+	m_specularColor = DirectX::XMLoadFloat4(&DirectX::XMFLOAT4(red, green, blue, alpha));
 }
 
 
@@ -54,25 +53,25 @@ void LightClass::SetSpecularPower(float power)
 }
 
 
-D3DXVECTOR4 LightClass::GetAmbientColor()
+DirectX::XMVECTOR LightClass::GetAmbientColor()
 {
 	return m_ambientColor;
 }
 
 
-D3DXVECTOR4 LightClass::GetDiffuseColor()
+DirectX::XMVECTOR LightClass::GetDiffuseColor()
 {
 	return m_diffuseColor;
 }
 
 
-D3DXVECTOR3 LightClass::GetDirection()
+DirectX::XMVECTOR LightClass::GetDirection()
 {
 	return m_direction;
 }
 
 
-D3DXVECTOR4 LightClass::GetSpecularColor()
+DirectX::XMVECTOR LightClass::GetSpecularColor()
 {
 	return m_specularColor;
 }
