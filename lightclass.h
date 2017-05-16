@@ -27,17 +27,17 @@ public:
 	void SetSpecularColor(float, float, float, float);
 	void SetSpecularPower(float);
 
-	DirectX::XMVECTOR GetAmbientColor();
-	DirectX::XMVECTOR GetDiffuseColor();
-	DirectX::XMVECTOR GetDirection();
-	DirectX::XMVECTOR GetSpecularColor();
+	DirectX::XMFLOAT4 GetAmbientColor();
+	DirectX::XMFLOAT4 GetDiffuseColor();
+	DirectX::XMFLOAT3 GetDirection();
+	DirectX::XMFLOAT4 GetSpecularColor();
 	float GetSpecularPower();
 
 private:
-	DirectX::XMVECTOR m_ambientColor;
-	DirectX::XMVECTOR m_diffuseColor;
-	DirectX::XMVECTOR m_direction;
-	DirectX::XMVECTOR m_specularColor;
+	DirectX::XMFLOAT4 m_ambientColor;
+	DirectX::XMFLOAT4 m_diffuseColor;
+	DirectX::XMFLOAT3 m_direction;
+	DirectX::XMFLOAT4 m_specularColor;
 	float m_specularPower;
 };
 

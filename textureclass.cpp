@@ -26,8 +26,8 @@ bool TextureClass::Initialize(ID3D11Device* device, WCHAR* filename)
 
 
 	// Load the texture in.
-	result = D3DX11CreateShaderResourceViewFromFile(device, filename, NULL, NULL, &m_texture, NULL);
-	if(FAILED(result))
+	result = DirectX::CreateDDSTextureFromFile(device, filename, NULL, &m_texture, 0, NULL);
+	if (FAILED(result))
 	{
 		return false;
 	}
